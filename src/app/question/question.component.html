@@ -1,0 +1,27 @@
+<div class="container">
+  <input type="checkbox" #admin (change)="admin.checked" id="isAdmin"><label for="isAdmin">Moderator</label>
+  <form class="form-group" *ngIf="admin.checked">
+    <input class="form-control" type="text" id="newQ" name="newQuestion" placeholder="Enter new question">
+  </form>
+</div>
+<div *ngFor="let question of questions">
+  <p>{{question.qid}}. {{question.qText}}</p>
+
+  <form #choice="ngForm" class="form-group">
+    <div *ngFor="let option of question.options">
+      <input type="radio" [name]="question.qid" [id]="option.choice" [value]="option.choice" ngModel [disabled]="disabled">
+      <label [for]="option.choice">
+        {{option.text}}</label>
+    </div>
+    <input type="submit" value="Submit" (click)="submit(choice);show = true; disabled=true" [disabled]="disabled" />
+  </form>
+  <div class="card" *ngIf="show" [ngSwitch]="choice.value[question.qid]==question.answer.choice">
+    <p class="alert-success" *ngSwitchCase="true">
+      Correct</p>
+    <p class="alert-danger" *ngSwitchCase="false">Wrong answer!</p>
+    <p>
+      <span style="color: green">Correct answer: {{question.answer.text}}</span>
+      <br> {{question.explanation}}
+    </p>
+  </div>
+</div>

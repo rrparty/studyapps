@@ -1,3 +1,17 @@
-<h1>
-  {{title}}
-</h1>
+<!-- This should be fix bar at the top -->
+<div id="topbar-fix" class="page-header">
+  <a href="#" routerLink="/home">
+    <span class="glyphicon glyphicon-home">Main Page</span>
+  </a>
+  <div>Manipur Study Circle</div>
+</div>
+
+<ol class="breadcrumb">
+  <li *ngFor="let page of this.db.pagePath">{{page}}</li>
+</ol>
+
+<router-outlet></router-outlet>
+
+<footer>
+  <small style="color: grey">Developed by RRPARTY</small>
+</footer>

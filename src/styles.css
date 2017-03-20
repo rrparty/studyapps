@@ -1,2 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~assets/css/bootstrap.css';
+body{
+    padding: 3em;
+}
+a.disabled {
+    color: #AAAAAA;
+    cursor: default;
+    pointer-events: none;
+    text-decoration: none;
+}
+
+.page-header{
+    padding: 1em;
+}

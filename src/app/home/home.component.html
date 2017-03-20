@@ -1,0 +1,11 @@
+<div class="container">
+  <nav>
+    <ul>
+      <li *ngFor="let curriculum of curriculums">
+        <a href="#" (click)="!!gotoCurriculum(curriculum);" [ngClass]="{disabled: !curriculum.enable}">
+        {{curriculum.name}}
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
