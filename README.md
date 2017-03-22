@@ -33,6 +33,7 @@ Run `git push`
 After committing changes in `<your-branch>`
 
 `git checkout master`
+
 `git merge <your-branch>`
  
  To continue working on `<your-branch>`
