@@ -1,4 +1,4 @@
-# Setup in local system by team members
+## Setup in local system by team members
 
 Run `git clone https://github.com/rrparty/studyapps.git` to download the content
 
@@ -8,12 +8,35 @@ Run `npm install` to install dependencies. This may take few minutes
 
 Run `ng serve` to run local web server at `http://localhost:4200/`
 
-# Updates
+## Making changes and Pushing the same
 
-1. Navigation topbar
-2. Logo
-3. User account button: sign in, sign up, etc.
+Run `git add .` to stage your changes for commit
 
-# Issues
+Run `git commit -m "<commit message>"` to commit the changes
 
-1. Bootstrap.js is not able to run. Hint: Some errors comes up in console
+Run `git push` to push the changes to remote repo
+
+### If facing conflicts on any files...
+
+Run `git pull` to fetch the latest changes from repo
+
+Make changes to the conflicting file(s)
+
+Run `git add .`
+
+Run `git commit -m "<commit message"` again
+
+Run `git push`
+
+## Merging branch to `master`
+
+After committing changes in `<your-branch>`
+
+`git checkout master`
+
+`git merge <your-branch>`
+ 
+ To continue working on `<your-branch>`
+ 
+ `git checkout <your-branch>`
+
