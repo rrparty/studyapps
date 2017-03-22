@@ -1,28 +1,38 @@
 <!-- This should be fix bar at the top -->
-<nav class="navbar navbar-default">
+
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
   <div class="container">
-    <div class="navbar-header">
+      
       <a class="navbar-brand" href="#">
         <img alt="Brand" src="assets/img/mpschub.png">
       </a>
-    </div>
+      
+       <div class="acct-btn btn-group ml-auto float-right hidden-xs-down">
+        <button type="button" class="btn btn-default"><i class="fa fa-user" aria-hidden="true"></i> My Account</button>
+        <button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span class="sr-only">Toggle Dropdown</span>
+        </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">Sign up</a>
+          <a class="dropdown-item" href="#">Login</a>
+  
+        </div>
+      </div>
     
-    <div class="btn-group navbar-right">
-      <button type="button" class="btn btn-default navbar-btn"><i class="fa fa-user" aria-hidden="true"></i> My Account</button>
-      <button type="button" class="btn btn-info dropdown-toggle navbar-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <span class="caret"></span>
-        <span class="sr-only">Toggle Dropdown</span>
-      </button>
-      <ul class="dropdown-menu">
-        <li><a href="#">Action</a></li>
-        <li><a href="#">Another action</a></li>
-        <li><a href="#">Something else here</a></li>
-        <li role="separator" class="divider"></li>
-        <li><a href="#">Logout</a></li>
-      </ul>
-    </div>
   </div>
 </nav>
+<router-outlet class="row">
+    
+</router-outlet>
+<footer>
+  <p class="text-center"><img src="assets/img/mpschub.png"><br><small style="color: grey">Developed by RRPARTY</small></p>
+  <ul class="list-inline text-center">
+  <li class="list-inline-item"><a href="">Terms and conditions</a></li>
+  <li class="list-inline-item"><a href="">FAQ</a></li>
+  <li class="list-inline-item"><a href="">Team</a></li>
+  <li class="list-inline-item"><a href="">Contact us</a></li>
+</ul>
+</footer>
 <!--
 <div id="topbar-fix" class="page-header">
   <a href="#" routerLink="/home">

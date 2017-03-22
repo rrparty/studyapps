@@ -1,7 +1,8 @@
 <div class="container">
+  <h2 class="content-title">Select your examination</h2>
   <nav>
-    <ul>
-      <li *ngFor="let curriculum of curriculums">
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let curriculum of curriculums">
         <a href="#" (click)="!!gotoCurriculum(curriculum);" [ngClass]="{disabled: !curriculum.enable}">
         {{curriculum.name}}
         </a>
