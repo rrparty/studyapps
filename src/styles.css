@@ -3,6 +3,7 @@
 
 @import '~assets/css/bootstrap4.css';
 @import '~assets/css/font-awesome.min.css';
+@import '~assets/css/bootstrap-social.css';
 
 body{
     font-family: 'Abel', sans-serif !important;
@@ -159,3 +160,7 @@ footer{
     margin-top: 50px;
 }
 
+
+.row-padding-medium{
+    padding: 30px;
+}

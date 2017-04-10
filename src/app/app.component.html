@@ -2,36 +2,49 @@
 
 <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
   <div class="container">
-      
-      <a class="navbar-brand" href="#">
-        <img alt="Brand" src="assets/img/mpschub.png">
-      </a>
-      
-       <div class="acct-btn btn-group ml-auto float-right hidden-xs-down">
-        <button type="button" class="btn btn-default"><i class="fa fa-user" aria-hidden="true"></i> My Account</button>
-        <button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+    <a class="navbar-brand" href="#">
+      <img alt="Brand" src="assets/img/mpschub.png">
+    </a>
+
+    <div class="acct-btn btn-group ml-auto float-right hidden-xs-down">
+      <button type="button" class="btn btn-default"><i class="fa fa-user" aria-hidden="true"></i>
+        <span *ngIf="userAuth; else defaultUser">{{userAuth.displayName}}</span>
+        <ng-template #defaultUser>
+         <span>Login &raquo;</span>
+        </ng-template>
+         </button>
+      <button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true"
+        aria-expanded="false">
           <span class="sr-only">Toggle Dropdown</span>
         </button>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" href="#">Sign up</a>
-          <a class="dropdown-item" href="#">Login</a>
-  
+      <div class="dropdown-menu" *ngIf="!userAuth">
+        <!--a class="dropdown-item" href="#" routerLink="/signup">Sign up</a-->
+        <div class="btn-group" role="group">
+          <button class="dropdown-item btn btn-social-icon btn-google" href="#" (click)="login()">
+            <i class="fa fa-google"></i></button>
+          <a class="dropdown-item btn btn-social-icon btn-facebook" href="#" (click)="login()">
+            <i class="fa fa-facebook"></i></a>
         </div>
       </div>
-    
+      <div class="dropdown-menu" *ngIf="userAuth">
+        <a class="dropdown-item btn btn-warning" href="#" (click)="signout(); false ">Sign out</a>
+      </div>
+    </div>
+
   </div>
 </nav>
 <router-outlet class="row">
-    
+
 </router-outlet>
 <footer>
   <p class="text-center"><img src="assets/img/mpschub.png"><br><small style="color: grey">Developed by RRPARTY</small></p>
   <ul class="list-inline text-center">
-  <li class="list-inline-item"><a href="">Terms and conditions</a></li>
-  <li class="list-inline-item"><a href="">FAQ</a></li>
-  <li class="list-inline-item"><a href="">Team</a></li>
-  <li class="list-inline-item"><a href="">Contact us</a></li>
-</ul>
+    <li class="list-inline-item"><a href="">Terms and conditions</a></li>
+    <li class="list-inline-item"><a href="">FAQ</a></li>
+    <li class="list-inline-item"><a href="">Team</a></li>
+    <li class="list-inline-item"><a href="">Contact us</a></li>
+  </ul>
 </footer>
 <!--
 <div id="topbar-fix" class="page-header">
