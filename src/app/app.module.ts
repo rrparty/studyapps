@@ -9,14 +9,16 @@ import { CurriculumComponent } from './curriculum/curriculum.component';
 import { HomeComponent } from './home/home.component';
 import { TopicComponent } from './topic/topic.component';
 import { DbService } from './db.service';
-import { QuestionComponent } from './question/question.component'
+import { QuestionComponent } from './question/question.component';
+import { SignupComponent } from './signup/signup.component'
 @NgModule({
   declarations: [
     AppComponent,
     CurriculumComponent,
     HomeComponent,
     TopicComponent,
-    QuestionComponent
+    QuestionComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,

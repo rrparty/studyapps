@@ -1,3 +1,3 @@
-export let routerConfig=[
-    {path:}
-]
+// export let routerConfig=[
+//     {path:}
+// ]
